@@ -7,6 +7,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   ml-pipeline:
     runs-on: ubuntu-latest
@@ -24,7 +27,9 @@ jobs:
         run: pip install -r practical2/requirements.txt
 
       - name: Train employee attrition model
-        run: python practical2/train_model.py
+        working-directory: practical2
+        run: python train_model.py
 
       - name: Run ML tests
-        run: python -m unittest discover -s practical2 -v
+        working-directory: practical2
+        run: python -m unittest discover -v
