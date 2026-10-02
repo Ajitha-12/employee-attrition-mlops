@@ -1,8 +1,7 @@
 import json
 import sys
 
-MINIMUM_ACCURACY = 0.85
-
+MINIMUM_ACCURACY = 0.99
 print("Reading employee attrition model evaluation metrics...")
 
 with open("metrics.json", "r") as file:
