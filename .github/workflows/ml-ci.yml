@@ -1,0 +1,30 @@
+name: Employee Attrition ML CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  ml-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r practical2/requirements.txt
+
+      - name: Train employee attrition model
+        run: python practical2/train_model.py
+
+      - name: Run ML tests
+        run: python -m unittest discover -s practical2 -v
