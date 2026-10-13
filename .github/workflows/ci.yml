@@ -60,7 +60,8 @@ jobs:
           cp practical5/employee_attrition_model.pkl release_candidate/
           cp practical5/metrics.json release_candidate/
           cp practical5/requirements.txt release_candidate/
-
+          cp practical6/Dockerfile release_candidate/
+          cp practical6/.dockerignore release_candidate/
           echo "Employee Attrition ML Release Candidate" > release_candidate/DEPLOYMENT.txt
           echo "Created by GitHub Actions" >> release_candidate/DEPLOYMENT.txt
 
