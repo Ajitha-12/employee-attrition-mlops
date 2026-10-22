@@ -1,0 +1,27 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow tracking data and databases
+mlruns/
+mlflow.db
+mlflow_backup_before_upgrade.db
+
+# Generated artifacts and outputs
+artifacts/
+outputs/
+data/features/
+data/processed/
+models/
+
+# Local temporary files
+New Text Document.txt
+
+# Secrets
+.env
