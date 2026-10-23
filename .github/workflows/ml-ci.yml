@@ -67,7 +67,7 @@ jobs:
             http://localhost:5000/predict)
 
           echo "Prediction response: $response"
-          echo "$response" | grep -q '"prediction"'
+          echo "$response" | grep -q '"attrition_prediction"'
 
       - name: Show Docker container logs
         if: always()
